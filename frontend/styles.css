@@ -1,0 +1,175 @@
+/* ===== Reset general ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Variables para modo claro */
+:root {
+  --bg: #f3f5f7;
+  --card: #ffffff;
+  --text: #222;
+  --bot-bg: #e5e9f2;
+  --bot-text: #333;
+  --user-bg: #0038a8;
+  --user-text: #fff;
+  --header-bg: #0038a8;
+  --scroll: #c4c9d3;
+}
+
+/* Variables modo oscuro */
+.dark-mode {
+  --bg: #0f1115;
+  --card: #16181d;
+  --text: #e6e6e6;
+  --bot-bg: #1f2229;
+  --bot-text: #dcdcdc;
+  --user-bg: #0054d6;
+  --user-text: #fff;
+  --header-bg: #0054d6;
+  --scroll: #3b3f46;
+}
+
+/* Fondo principal */
+body {
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--text);
+}
+
+/* Contenedor principal */
+.chat-container {
+  width: 380px;
+  height: 600px;
+  background: var(--card);
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header */
+.header {
+  background: var(--header-bg);
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Botón modo oscuro */
+#toggleDark {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+#toggleDark:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Mensajes */
+.messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Burbujas */
+.msg {
+  max-width: 80%;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Bot */
+.msg.bot {
+  background: var(--bot-bg);
+  color: var(--bot-text);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+/* Usuario */
+.msg.user {
+  background: var(--user-bg);
+  color: var(--user-text);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+/* Input */
+.input-box {
+  padding: 12px;
+  background: var(--card);
+  border-top: 1px solid #ccc2;
+  display: flex;
+  gap: 8px;
+}
+
+#userInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #bbb3;
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 10px;
+  outline: none;
+}
+
+#userInput:focus {
+  border-color: var(--user-bg);
+}
+
+/* Botón enviar */
+#sendBtn {
+  background: var(--header-bg);
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+#sendBtn:hover {
+  background: #002d85;
+}
+
+#sendBtn:active {
+  transform: scale(0.95);
+}
+
+/* Scrollbar */
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: var(--scroll);
+  border-radius: 10px;
+}
