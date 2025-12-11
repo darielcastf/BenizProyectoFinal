@@ -81,6 +81,9 @@ Productos disponibles:
         print("Error en /chat:", e)
         return jsonify({"error": "Error al procesar la solicitud"}), 500
 
-
+# ============================
+#      RUN EN RENDER
+# ============================
 if __name__ == "__main__":
-    app.run(debug=True)
+    PORT = int(os.environ.get("PORT", 5000))  # Puerto que Render asigna
+    app.run(host="0.0.0.0", port=PORT, debug=True)
